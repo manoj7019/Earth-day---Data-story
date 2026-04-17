@@ -118,6 +118,53 @@ const data = [
     requestAnimationFrame(tick);
   }
 
+// 90BCMe 
+const el = document.getElementById('count');
+  const target = 90;
+  const duration = 2000;
+  const start = performance.now();
+ 
+  (function tick(now) {
+    const p = Math.min((now - start) / duration, 1);
+    const ease = 1 - Math.pow(1 - p, 3);
+    el.textContent = Math.round(target * ease);
+    if (p < 1) requestAnimationFrame(tick);
+  })(start);
+
+// CBG Potential 
+const observer2 = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        el.classList.add('animate-in');
+    
+        // Diesel gauge
+        if (el.id === 'card2') {
+            setTimeout(() => {
+            document.getElementById('dieselGauge').style.width = '84%';
+            }, 400);
+        }
+    
+        // Natural gas comparison bars
+        if (el.id === 'card3') {
+            setTimeout(() => {
+            document.getElementById('gasDemand').style.width = '83%';
+            }, 400);
+            setTimeout(() => {
+            document.getElementById('gasPotential').style.width = '100%';
+            }, 600);
+        }
+    
+        observer2.unobserve(el);
+        });
+    }, { threshold: 0.25 });
+    
+    document.querySelectorAll('.stat-card, .footnotes').forEach(el => observer2.observe(el));
+    
+    // Stagger card animations
+    document.querySelectorAll('.stat-card').forEach((card, i) => {
+        card.style.animationDelay = (i * 0.12) + 's';
+    });
 
 // PROJECTS-SECTION
 document.getElementById('map-igrpl-project-box').style.display = 'none';
