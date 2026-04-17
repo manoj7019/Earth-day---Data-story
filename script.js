@@ -57,6 +57,67 @@ const data = [
   window.addEventListener('resize', updateAnimation);
   updateAnimation();
 
+ // ---- Intersection Observer for scroll-triggered animations ----
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-in');
+ 
+        // Animate count-up numbers
+        entry.target.querySelectorAll('[data-count]').forEach(el => {
+          animateNumber(el, parseInt(el.dataset.count));
+        });
+ 
+        // Animate bars
+        entry.target.querySelectorAll('.stream-bar').forEach((bar, i) => {
+          setTimeout(() => {
+            bar.style.width = bar.dataset.target + '%';
+          }, i * 100);
+        });
+ 
+        // Animate flow bars
+        entry.target.querySelectorAll('[data-target-feed]').forEach((bar, i) => {
+          setTimeout(() => {
+            bar.style.width = bar.dataset.targetFeed + '%';
+          }, i * 120);
+        });
+        entry.target.querySelectorAll('[data-target-cbg]').forEach((bar, i) => {
+          setTimeout(() => {
+            bar.style.width = bar.dataset.targetCbg + '%';
+          }, i * 120 + 300);
+        });
+ 
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+ 
+  // Observe sections
+  document.querySelectorAll('.stream-card, .total-banner, .flow-section, .callout').forEach(el => {
+    observer.observe(el);
+  });
+ 
+  // Stagger card appearances
+  document.querySelectorAll('.stream-card').forEach((card, i) => {
+    card.style.animationDelay = (0.1 + i * 0.1) + 's';
+  });
+ 
+  // Count-up animation
+  function animateNumber(el, target) {
+    const duration = 1200;
+    const start = performance.now();
+ 
+    function tick(now) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(target * eased);
+      if (progress < 1) requestAnimationFrame(tick);
+    }
+ 
+    requestAnimationFrame(tick);
+  }
+
 
 // PROJECTS-SECTION
 document.getElementById('map-igrpl-project-box').style.display = 'none';
