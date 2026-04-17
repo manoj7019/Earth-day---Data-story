@@ -1294,3 +1294,34 @@ p span {
     margin-top: -310px;
     margin-left: 270px;
 }
+
+.biogas-plant-video {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.726);
+}
+.biogas-plant-video video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+.biogas-plant-video-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 64px;
+    color: white;
+    max-width: 1300px;
+}
+
+.biogas-plant-video-content p {
+    color: white;
+}
