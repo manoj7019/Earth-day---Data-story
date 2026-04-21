@@ -90,6 +90,13 @@ a #source-name > u {
   margin-bottom: -36px;
 }
 
+@media screen and (max-width:768px) {
+  .earth-video {
+    width: 100vw;
+    height: auto;
+  }  
+}
+
 .fn-mark {
   color: #ebb018;
 }
@@ -111,6 +118,14 @@ a > u {
   font-size: 12px;
   color: #4a4b4b;
   text-align: right;
+}
+
+@media only screen and (max-width:768px) {
+  .important-note {
+  font-size: 10px;
+  color: #4a4b4b;
+  text-align: center;
+}
 }
 
 .bcme {
@@ -1402,7 +1417,11 @@ a > u {
       gap: 1.2rem;
       padding: 2rem 1.5rem;
     }
-    .arrow-convert { transform: rotate(90deg); }
+    .arrow-convert { 
+      transform: rotate(90deg); 
+      margin-left: -128px;
+      margin-block: 24px;
+    }
     .flow-row {
       grid-template-columns: 1fr;
       gap: 0.3rem;
@@ -1522,7 +1541,7 @@ button {
     justify-content: space-between;
     align-items: center;
     padding-right: 48px;
-    height: 500px;
+    height: max-content;
     /* margin: 0 auto; */
 }
 
@@ -2114,7 +2133,7 @@ h5 {
 @media only screen and (max-width:768px) {
     .our-projects-head {
         margin: 32px auto;
-        width: 100vw;
+        width: 100%;
         gap: 8px;
     }
     .our-projects-head h1 {
@@ -2128,9 +2147,9 @@ h5 {
     .map-project-buttons {
         position: inherit;
         flex-direction: column;
-        gap: 0px;
+        gap: 8px;
         margin: 0 auto;
-        width: 100vw;
+        width: 100%;
         z-index: 1;
     }
     .map-hero-button-anchor {
@@ -2147,9 +2166,9 @@ h5 {
         text-align: center;
     }
     svg {
-        width: 100vw;
+        width: calc(100vw - 64px);
         padding: 0;
-        margin: -80px 0 -130px 0;
+        margin: -170px 0 -210px 0;
         z-index: -1000;
     }
     .map-card-image {
@@ -2162,6 +2181,7 @@ h5 {
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
+        height: max-content;
         /* padding-right: 48px; */
     }
     .map-box2 {
@@ -2171,13 +2191,19 @@ h5 {
         font-size: 16px;
     }
     .map-project-card {
-        padding: 4px 4px 4px 0;
+        padding: 8px;
         gap: 8px;
-        width: calc(50vw - 24px);
+        width: calc(50vw - 48px);
     }
     .map-project-card > div > p {
         font-size: 10px;
         line-height: 16px;
+    }
+    .map-project-card-containers {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: max-content;
+      gap: 12px;
     }
     .map-pins {
         display: none;
@@ -2396,6 +2422,23 @@ p span {
     .col-num { margin-bottom: 0; min-width: 60px; }
     .col-unit { margin-bottom: 0; }
   }
+
+    @media only screen and (max-width:768px) {
+    /* .our-power {
+      width: calc(100%);
+      } */
+      .our-power-split {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 48px;
+      }
+      .our-power-split .gps-video {
+        width: 100vw;
+        height: 200px;
+        margin-left: -32px;
+      }
+    }
 
 /* SPLIT-IMAGE-HERO */
 :root {
@@ -2755,7 +2798,11 @@ p span {
     .split-hero { height: 340px; }
     .split-left .label-overlay h3,
     .split-right .label-overlay h3 { font-size: 1.1rem; }
-    .stats-bar { gap: 1.5rem; padding: 1.2rem 1rem; }
+    .stats-bar { 
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem; padding: 1.2rem 1rem; 
+    }
     .content { padding: 2.5rem 1.3rem 3rem; }
     .solution { padding: 1.5rem; }
   }
