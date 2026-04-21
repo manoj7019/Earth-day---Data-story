@@ -567,7 +567,7 @@ a > u {
         font-size: 12px;
         margin-bottom: 10px;
         letter-spacing: 0.05em;
-        text-transform: lowercase;
+        /* text-transform: lowercase; */
         font-weight: 500;
     }
  
@@ -1421,9 +1421,7 @@ a > u {
       padding: 2rem 1.5rem;
     }
     .arrow-convert { 
-      transform: rotate(90deg); 
-      margin-left: -128px;
-      margin-block: 24px;
+      display: hidden;
     }
     .flow-row {
       grid-template-columns: 1fr;
