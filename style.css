@@ -1408,7 +1408,7 @@ a > u {
     }
   }
  
-  @media (max-width: 640px) {
+  @media (max-width: 768px) {
     .page { padding: 2.5rem 1.2rem 4rem; }
     .streams {
       grid-template-columns: 1fr 1fr;
