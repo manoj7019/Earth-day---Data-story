@@ -1521,7 +1521,7 @@ a {
 }
 
 button {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-weight: 600;
     padding: 8px 32px;
     border: none;
@@ -1541,7 +1541,7 @@ button {
     justify-content: space-between;
     align-items: center;
     padding-right: 48px;
-    height: max-content;
+    height: 600px;
     /* margin: 0 auto; */
 }
 
@@ -2182,10 +2182,12 @@ h5 {
         justify-content: space-between;
         align-items: center;
         height: max-content;
+        width: 100%;
         /* padding-right: 48px; */
     }
     .map-box2 {
         padding: 16px;
+        margin: 32px;
     }
     .map-box2 p{
         font-size: 16px;
@@ -2424,9 +2426,9 @@ p span {
   }
 
     @media only screen and (max-width:768px) {
-    /* .our-power {
+    .our-power {
       width: calc(100%);
-      } */
+      }
       .our-power-split {
       display: flex;
       flex-direction: column;
