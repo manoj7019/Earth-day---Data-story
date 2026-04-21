@@ -278,7 +278,7 @@ a {
   }
  
   .stat-context strong {
-    color: var(--ink);
+    color: #00704a;
     font-weight: 600;
   }
  
