@@ -166,6 +166,36 @@ const observer2 = new IntersectionObserver((entries) => {
         card.style.animationDelay = (i * 0.12) + 's';
     });
 
+// Ind vs GM & CH comparison 
+    function animateNumber2(el, target) {
+        const duration = 1600;
+        const start = performance.now();
+        (function tick(now) {
+        const p = Math.min((now - start) / duration, 1);
+        const ease = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(target * ease);
+        if (p < 1) requestAnimationFrame(tick);
+        })(start);
+    }
+    
+    const observer5 = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+    
+        entry.target.querySelectorAll('.circle-item').forEach((item, i) => {
+            setTimeout(() => {
+            item.classList.add('visible');
+            const numEl = item.querySelector('[data-count]');
+            setTimeout(() => animateNumber2(numEl, parseInt(numEl.dataset.count)), 200);
+            }, i * 250);
+        });
+    
+        observer5.unobserve(entry.target);
+        });
+    }, { threshold: 0.3 });
+    
+    observer5.observe(document.getElementById('circles'));
+
 // PROJECTS-SECTION
 document.getElementById('map-igrpl-project-box').style.display = 'none';
 
@@ -1011,3 +1041,68 @@ document.getElementById('INTG2').addEventListener('mouseleave', function() {
     document.getElementById('map-project-card-container-tg2').classList.remove('map-project-card-containers');
     document.getElementById('INTG2').style.fill = ' var(--stateColor)';
 })
+
+// Our Power
+const observer4 = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer4.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+ 
+  document.querySelectorAll('.fade-in').forEach(el => observer4.observe(el));
+
+// Generate particles on the fertile soil side
+  const particleContainer = document.getElementById('particles');
+  for (let i = 0; i < 40; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    p.style.left = Math.random() * 100 + '%';
+    p.style.top = Math.random() * 100 + '%';
+    p.style.animationDelay = (Math.random() * 6) + 's';
+    p.style.animationDuration = (4 + Math.random() * 4) + 's';
+    p.style.width = (2 + Math.random() * 3) + 'px';
+    p.style.height = p.style.width;
+    particleContainer.appendChild(p);
+  }
+ 
+  // Animate count-up numbers
+  function animateNumber(el, target) {
+    const duration = 1800;
+    const start = performance.now();
+    const isLarge = target > 1000;
+ 
+    (function tick(now) {
+      const p = Math.min((now - start) / duration, 1);
+      const ease = 1 - Math.pow(1 - p, 3);
+      const val = Math.round(target * ease);
+      el.textContent = isLarge ? val.toLocaleString() : val;
+      if (p < 1) requestAnimationFrame(tick);
+    })(start);
+  }
+ 
+  // Intersection observer
+  const observer3 = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+ 
+      if (entry.target.id === 'statsBar') {
+        entry.target.querySelectorAll('.stat-item').forEach((item, i) => {
+          setTimeout(() => {
+            item.classList.add('animate-in');
+            const numEl = item.querySelector('[data-count]');
+            animateNumber(numEl, parseInt(numEl.dataset.count));
+          }, i * 150);
+        });
+      } else {
+        entry.target.classList.add('animate-in');
+      }
+ 
+      observer3.unobserve(entry.target);
+    });
+  }, { threshold: 0.3 });
+ 
+  observer3.observe(document.getElementById('statsBar'));
+  observer3.observe(document.getElementById('contentBlock'));

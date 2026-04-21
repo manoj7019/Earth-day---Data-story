@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Projects</title>
+    <title>Our Power. Our Planet.</title>
     <!-- <link rel="stylesheet" href="./projects.css"> -->
     <link rel="stylesheet" href="./style.css">
     <script defer src="./script.js"></script>
@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="head">
-        <h1>We're full of gas</h1>
+        <h1>We're full of <span class="gas">gas.</span></h1>
         <h3>India's untapped biomethane isn't a problem. It's the point.</h3>
         <br><br><br>
         <div class="bcme">
@@ -25,8 +25,8 @@
         </p>
 
         <br><br>
-        <!-- <video 
-            src="images/lpg_earth.mp4"        
+        <video 
+            src="images/earth_v_cylinders.mp4"        
             width="850"
             height="480"
             poster="thumbnail.jpg"   
@@ -35,8 +35,9 @@
             loop                   
             playsinline>           
             Your browser does not support the video tag.
-        </video> -->
-        <br><br>
+        </video>
+        <br>
+        <p class="mini-para">**Video for reperesentation purpose only</p>
     </div>
 
     <div class="cbg-potential">
@@ -161,6 +162,67 @@
         </div>
     </div>
 
+    <br><br><br><br><br><br><br>
+
+    <div class="wrapper">
+        <!-- <div class="kicker">Global CBG Comparison</div> -->
+        <h2>The scale of the opportunity</h2>
+        <p class="main-para">Operationally, most CBG in India is delivered at 90–97% methane.</p>
+
+        <br><br><br>
+        
+        <div class="circles" id="circles">
+        
+            <div class="circle-item" style="animation-delay: 0.15s">
+            <div class="circle germany">
+                <span class="circle-num" data-count="87">0</span>
+                <span class="circle-unit">TWh/yr</span>
+                <span class="circle-label-type">Current</span>
+            </div>
+            <div class="flag-and-name">
+                <span class="country-flag"><img src="./images/germany_flag.png" alt=""></span>
+                <span class="country-name">Germany</span>
+            </div>
+            </div>
+        
+            <div class="circle-item" style="animation-delay: 0.3s">
+            <div class="circle china">
+                <span class="circle-num" data-count="81">0</span>
+                <span class="circle-unit">TWh/yr</span>
+                <span class="circle-label-type">Current</span>
+            </div>
+            <div class="flag-and-name">
+                <span class="country-flag"><img src="./images/china_flag.png" alt=""></span>
+                <span class="country-name">China</span>
+            </div>
+            </div>
+        
+            <div class="circle-item" style="animation-delay: 0.5s">
+            <div class="circle india">
+                <span class="circle-num" data-count="900">0</span>
+                <span class="circle-unit">TWh/yr</span>
+                <span class="circle-label-type">Potential</span>
+            </div>
+            <div class="flag-and-name">
+                <span class="country-flag"><img src="./images/india_flag.png" alt=""></span>
+                <span class="country-name">India</span>
+            </div>
+            </div>
+        
+        </div>
+
+        <p class="sub-para">
+            At 90 BCM, India's biomethane potential — roughly 900 TWh of energy — is more than ten times what Germany or China produces from biogas today. <br><br>
+            <em>
+            (India's biomethane potential of 90 BCM is sourced from the IEA's India Gas Market Report, 2025. Energy equivalent is calculated using the standard natural-gas conversion factor of 10 kWh per cubic metre of biomethane at 95% methane purity — the same factor used by the IEA and WBA in cross-country biogas comparisons, and consistent with BIS IS 16087:2016 specifications for CBG)
+            </em>
+        </p>
+        
+        <!-- <div class="multiplier">India's potential is <strong>~10×</strong> Germany's current output</div> -->
+    </div>
+
+    <br><br><br>
+
 <!-- Five streams. One Resource -->
     <div class="page">
     
@@ -256,6 +318,7 @@
         </div>
     </div>
 
+    <br><br><br>
 
 <!-- Projects -->
     <div class="map-our-projects">
@@ -1588,39 +1651,141 @@
 
     <br><br><br><br><br>
 
-    <div class="biogas-plant-video">
-        <video autoplay muted loop>
-            <source src="images/GPSR Hero Intro_1.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div class="biogas-plant-video-content">
-            <h2>Our Power. Our Planet.</h2>
-            <p class="sub-para">
-                Converting agricultural residues into compressed biogas (CBG) offers significant dual benefits as a clean energy investment. <br>
-                The first is energy. A 5 TPD CBG plant alone does more than generate fuel. Replacing conventional fuels can reduce over 4,700 tonnes of CO₂-equivalent emissions every year — the equivalent of displacing more than 2,000 tonnes of gasoline.
-            </p>
-            <br><br>
-            <p class="sub-para">
-                It also replaces synthetic fertilisers — reducing both input costs and emissions. In one year, this can offset over 300 tonnes of CO₂-equivalent emissions from the agriculture system.
-                But the largest impact comes from what doesn’t happen. When organic waste is diverted from landfills and processed instead, it can prevent up to 37,500 tonnes of CO₂-equivalent emissions annually.
-            </p>
-            <br><br>
-            <p class="sub-para">
-                The second is soil. Every CBG plant produces a co-product alongside its gas: fermented organic manure, a digestate that rebuilds soil organic carbon. 
-                A major ICAR-coordinated survey of 254,236 soil samples across 620 Indian districts found that soil organic carbon is declining across large parts of the country.
-                This is not a marginal improvement. It is a system-level shift — driven by a single unit of infrastructure.
-            </p>
+    <br><br><br><br>
+
+    <!-- Our Power -->
+    <div class="our-power">
+        <h2>Our Power. Our Planet.</h2>
+        
+        <div class="our-power-split">
+            <div class="">
+                <video class="gps-video" src="./images/GPSR Hero Intro_1.mp4" autoplay></video>
+            </div>
+            <div class="">
+                <div class="stat-block fade-in">
+                    <div class="stat-number">38,500 tCO<sub>2</sub>e</div>
+                    <p class="stat-desc">
+                        Fossil CNG emissions displaced by GPS Renewables plants in FY26. <strong>One company. One year.</strong> A portfolio that's still scaling.
+                    </p>
+                </div>
+                <div class="stat-block fade-in">
+                    <div class="stat-number">1.4 billion tonnes</div>
+                    <p class="stat-desc">
+                    CO<sub>2</sub>-equivalent that India's full 90 BCM biomethane potential could avert annually — from waste that already exists in fields and cities across the country.
+                </p>
+                    <div class="stat-source">Source: IEA Outlook for Biogas and Biomethane, 2025</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- THREE-COLUMN BLOCK -->
+        <div class="three-col fade-in">
+            <div class="col-stat">
+                <div class="col-num">4%</div>
+                <div class="col-desc">Of global biogas potential is being used today.</div>
+            </div>
+            <div class="col-stat">
+                <div class="col-num">9%</div>
+                <div class="col-desc">India's share of global biomethane potential.</div>
+            </div>
+            <div class="col-stat">
+                <div class="">
+                    <div class="col-num">170</div>
+                    <div class="col-unit">Mt CO₂e</div>
+                </div>
+                <div class="col-desc">Avoided annually at full potential — from fossil CNG displacement alone.</div>
+            </div>
         </div>
     </div>
 
-    <br><br>
+    <br><br><br><br>
+
+    <!-- SPLIT IMAGE HERO -->
+    <div class="split-hero">
+    <div class="split-side split-left">
+        <!-- <div class="texture"></div> -->
+        <!-- <div class="crack-overlay">
+        <svg viewBox="0 0 600 600" fill="none" stroke="#2a1e0f" stroke-width="1.5" opacity="0.5">
+            <path d="M300 0 L290 80 L310 160 L280 240 L320 320 L290 400 L310 480 L295 600"/>
+            <path d="M290 80 L220 130 L160 110"/>
+            <path d="M310 160 L380 200 L440 180"/>
+            <path d="M280 240 L200 280 L140 260 L80 290"/>
+            <path d="M320 320 L400 360 L460 340 L520 370"/>
+            <path d="M290 400 L210 440 L150 420"/>
+            <path d="M310 480 L390 520 L450 500"/>
+            <path d="M200 280 L180 360 L200 440"/>
+            <path d="M400 200 L420 280 L400 360"/>
+            <path d="M140 260 L120 340 L140 420 L120 500"/>
+            <path d="M460 340 L480 420 L460 500 L480 580"/>
+            <path d="M0 150 L80 170 L160 110"/>
+            <path d="M600 250 L520 270 L440 180"/>
+            <path d="M0 400 L80 390 L150 420"/>
+            <path d="M600 450 L520 470 L450 500"/>
+        </svg>
+        </div> -->
+        <div class="label-overlay">
+        <!-- <span class="icon">🏜️</span> -->
+        <h3>Degraded Soil</h3>
+        <p>Cracked, carbon-depleted earth across India's arable land</p>
+        </div>
+    </div>
+    
+    <div class="split-divider">
+        <div class="vs-badge">VS</div>
+    </div>
+    
+    <div class="split-side split-right">
+        <div class="texture"></div>
+        <div class="particles" id="particles"></div>
+        <div class="label-overlay">
+        <!-- <span class="icon">🌱</span> -->
+        <h3>Fertile Soil</h3>
+        <p>Dark, carbon-rich earth restored by organic digestate</p>
+        </div>
+    </div>
+    </div>
+    
+    <!-- STATS BAR -->
+    <div class="stats-bar" id="statsBar">
+    <div class="stat-item">
+        <div class="stat-num" data-count="254236">0</div>
+        <div class="stat-label">Soil Samples</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-num" data-count="620">0</div>
+        <div class="stat-label">Districts</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-num" data-count="29">0</div>
+        <div class="stat-label">States</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-num" data-count="6">0</div>
+        <div class="stat-label">Year Study</div>
+    </div>
+    </div>
+    
+    <!-- CONTENT -->
+    <div class="content">
+    <div class="content-block" id="contentBlock">
+        <p class="body-text">
+        A six-year ICAR study — one of the <strong>largest soil carbon assessments ever conducted</strong> — found declining organic carbon across India's arable land. The most affected states are the same ones where India's agricultural CBG plants are concentrated.
+        </p>
+
+        <p class="body-text">
+            Every CBG plant produces fermented organic manure — a digestate that rebuilds soil organic carbon. A major ICAR study of 254,236 soil samples across 620 Indian districts found that soil organic carbon is declining across large parts of the country. Digestate is one of the few scalable ways to reverse it.
+        </p>
+    </div>
+    </div>
 
     <div class="last-section">
         <h2>The Power Isn’t Coming. It’s Already Here</h2>
         <p class="sub-para">
-            It is in the fields of Uttar Pradesh. The crop cycles of Punjab and Haryana. In the waste generated across India’s cities.
-            It always has been. The shift is not discovery. It is a conversion. Converting waste into fuel. Converting emissions into energy. Converting a distributed resource into an organised infrastructure.
-            This requires systems, collection, processing, distribution, and markets that make it viable at scale. None of it is new. But all of it needs to be built. And it is being built — plant by plant, tonne by tonne.
+            The fields and crop cycles of Uttar Pradesh, Punjab and Haryana. The waste generated in India's cities. <br><br>
+            It was always here. <br><br>
+            The shift is not discovery. It is conversion — waste into fuel, emissions into energy, a distributed resource into organised infrastructure. <br><br>
+            Plant by plant. Tonne by tonne.
+
         </p>
         <br><br><br><br><br>
     </div>
