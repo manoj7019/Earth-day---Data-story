@@ -154,7 +154,7 @@ a > u {
     font-style: italic;
     font-size: clamp(1.5rem, 4vw, 3rem);
     color: #747474;
-    margin-top: 0.5rem;
+    margin-top: 1rem;
     margin-left: 0.5rem;
 }
 
